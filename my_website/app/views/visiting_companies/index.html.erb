@@ -1,0 +1,31 @@
+<h1>Listing visiting_companies</h1>
+
+<table>
+  <tr>
+    <th>Student ID</th>
+    <th>Student</th>
+    <th>Attending company ID</th>
+    <th>Attending company</th>
+    <th>Visited</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @visiting_companies.each do |visiting_company| %>
+  <tr>
+    <td><%= visiting_company.student_id %></td>
+    <td><%= Student.find(visiting_company.student_id).name %></td>
+    <td><%= visiting_company.attending_company_id %></td>
+    <td><%= AttendingCompany.find(visiting_company.attending_company_id).name %></td>
+    <td><%= visiting_company.visited %></td>
+    <td><%= link_to 'Show', visiting_company %></td>
+    <td><%= link_to 'Edit', edit_visiting_company_path(visiting_company) %></td>
+    <td><%= link_to 'Destroy', visiting_company, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Visiting company', new_visiting_company_path %>

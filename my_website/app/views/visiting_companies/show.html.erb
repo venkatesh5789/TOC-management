@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Student:</b>
+  <%= 'Successfully added ' + AttendingCompany.find(@visiting_company.attending_company_id).name + 'to student ' + Student.find(@visiting_company.student_id).name %>
+</p>
+
+<p>
+  <b>Attending company:</b>
+  <%= @visiting_company.attending_company_id %>
+</p>
+
+<p>
+  <b>Visited:</b>
+  <%= @visiting_company.visited %>
+</p>
+
+
+<%= link_to 'Edit', edit_visiting_company_path(@visiting_company) %> |
+<%= link_to 'Back', visiting_companies_path %>

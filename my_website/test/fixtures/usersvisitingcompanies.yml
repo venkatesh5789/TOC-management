@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_name: 
+  company_name: 
+  day1visit: 
+  day2visit: 
+  day1visited: 
+  day2visited: false
+
+two:
+  user_name: 
+  company_name: 
+  day1visit: 
+  day2visit: 
+  day1visited: 
+  day2visited: false

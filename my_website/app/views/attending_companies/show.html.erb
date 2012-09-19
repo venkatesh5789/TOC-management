@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @attending_company.name %>
+</p>
+
+<p>
+  <b>Day1:</b>
+  <%= @attending_company.day1 %>
+</p>
+
+<p>
+  <b>Day2:</b>
+  <%= @attending_company.day2 %>
+</p>
+
+<p>
+  <b>Specialization:</b>
+  <%= @attending_company.specialization %>
+</p>
+
+
+<%= link_to 'Edit', edit_attending_company_path(@attending_company) %> |
+<%= link_to 'Back', attending_companies_path %>

@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @student.name %>
+</p>
+
+<p>
+  <b>Specialization:</b>
+  <%= @student.specialization %>
+</p>
+
+<p>
+  <b>Companies eligible for:</b>
+<table>
+<td>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Day1</th>
+      <th>Day2</th>
+       <th></th>
+    </tr>
+  <% AttendingCompany.all.each do |attending_company| %>
+        <% if (attending_company.specialization == @student.specialization) && (VisitingCompany.where( :student_id => @student.id , :attending_company_id=>attending_company.id ).length==0) %>
+        <tr>
+            <td><%= link_to attending_company.name,  attending_company %></td>
+            <td><%= attending_company.day1 %></td>
+            <td><%= attending_company.day2 %></td>
+            <td><%= button_to("Add Visiting Company", {:method => 'new_visiting_company', :student_id => @student.id, :company_id => attending_company.id})%></td>
+       </tr>
+       <% end %>
+    <% end %>
+  </table>
+</td>
+
+<td>
+  <table>
+    <tr>
+      <th>Day 1 Companies</th>
+    </tr>
+    <% VisitingCompany.all.each do |visiting_company| %>
+        <% if (visiting_company.student_id == @student.id) && AttendingCompany.find(visiting_company.attending_company_id).day1  %>
+            <tr>
+              <td><%= link_to AttendingCompany.find(visiting_company.attending_company_id).name, AttendingCompany.find(visiting_company.attending_company_id) %></td>
+              <td><%= link_to("Remove", {:method => 'destroy_visiting_company', :student_id => @student.id, :company_id => AttendingCompany.find(visiting_company.attending_company_id).id})%></td>
+            </tr>
+        <% end %>
+    <% end %>
+  </table>
+  </td>
+   <td>
+  <table>
+    <tr>
+      <th>Day 2 Companies</th>
+    </tr>
+    <% VisitingCompany.all.each do |visiting_company| %>
+        <% if (visiting_company.student_id == @student.id) && AttendingCompany.find(visiting_company.attending_company_id).day2  %>
+            <tr>
+              <td><%= link_to AttendingCompany.find(visiting_company.attending_company_id).name, AttendingCompany.find(visiting_company.attending_company_id) %></td>
+            </tr>
+        <% end %>
+    <% end %>
+  </table>
+</td>
+</table>
+
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

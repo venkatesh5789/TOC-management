@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  day1: false
+  day2: false
+  specialization: MyString
+
+two:
+  name: MyString
+  day1: false
+  day2: false
+  specialization: MyString
