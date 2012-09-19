@@ -75,13 +75,12 @@ class VisitingCompaniesController < ApplicationController
   # DELETE /visiting_companies/1
   # DELETE /visiting_companies/1.json
   def destroy
-    #@visiting_company = VisitingCompany.where(:student_id => params[:student_id], :attending_company_id => params[:company_id])[0]
-    @visiting_company = VisitingCompany.find(VisitingCompany.where(:student_id => params[:student_id], :attending_company_id => params[:company_id]).id)
+    student_id = VisitingCompany.find(params[:id]).student_id
+    @visiting_company = VisitingCompany.find(params[:id])
     @visiting_company.destroy
 
     respond_to do |format|
-      format.html { redirect_to visiting_companies_url }
-      format.json { head :no_content }
+      format.html{redirect_to Student.find(student_id)}
     end
   end
 end

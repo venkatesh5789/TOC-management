@@ -43,7 +43,7 @@
         <% if (visiting_company.student_id == @student.id) && AttendingCompany.find(visiting_company.attending_company_id).day1  %>
             <tr>
               <td><%= link_to AttendingCompany.find(visiting_company.attending_company_id).name, AttendingCompany.find(visiting_company.attending_company_id) %></td>
-              <td><%= link_to("Remove", {:method => 'destroy_visiting_company', :student_id => @student.id, :company_id => AttendingCompany.find(visiting_company.attending_company_id).id})%></td>
+              <td><%= button_to("Remove", visiting_company_path(visiting_company.id) , {:method => :delete})%></td>
             </tr>
         <% end %>
     <% end %>
@@ -58,6 +58,7 @@
         <% if (visiting_company.student_id == @student.id) && AttendingCompany.find(visiting_company.attending_company_id).day2  %>
             <tr>
               <td><%= link_to AttendingCompany.find(visiting_company.attending_company_id).name, AttendingCompany.find(visiting_company.attending_company_id) %></td>
+              <td><%= button_to("Remove", visiting_company_path(visiting_company.id) , {:method => :delete})%></td>
             </tr>
         <% end %>
     <% end %>
