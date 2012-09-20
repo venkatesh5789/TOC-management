@@ -1,29 +1,79 @@
-<h1>Listing attending_companies</h1>
+<h1>Attending Companies</h1>
 
-<table>
+<!-- Javascript goes in the document HEAD -->
+<script type="text/javascript">
+    function altRows(id){
+        if(document.getElementsByTagName){
+
+            var table = document.getElementById(id);
+            var rows = table.getElementsByTagName("tr");
+
+            for(i = 0; i < rows.length; i++){
+                if(i % 2 == 0){
+                    rows[i].className = "evenrowcolor";
+                }else{
+                    rows[i].className = "oddrowcolor";
+                }
+            }
+        }
+    }
+
+    window.onload=function(){
+        altRows('alternatecolor');
+    }
+</script>
+
+
+<!-- CSS goes in the document HEAD or added to your external stylesheet -->
+<style type="text/css">
+    table.altrowstable {
+        font-family: verdana,arial,sans-serif;
+        font-size:11px;
+        color:#333333;
+        border-width: 1px;
+        border-color: #a9c6c9;
+        border-collapse: collapse;
+    }
+    table.altrowstable th {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #a9c6c9;
+    }
+    table.altrowstable td {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #a9c6c9;
+    }
+    .oddrowcolor{
+        background-color:#d4e3e5;
+    }
+    .evenrowcolor{
+        background-color:#c3dde0;
+    }
+</style>
+
+ <td>
+<!-- Table goes in the document BODY -->
+<table class="altrowstable" id="alternatecolor">
   <tr>
-    <th>Name</th>
-    <th>Day1</th>
-    <th>Day2</th>
-    <th>Specialization</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Company name</th><th>Day 1</th><th>Day 2</th><th>Specialization</th>
   </tr>
+    <% @attending_companies.each do |attending_company| %>
+        <tr>
+          <td><%= link_to attending_company.name , attending_company%></td>
+          <td><%= attending_company.day1 %></td>
+          <td><%= attending_company.day2 %></td>
+          <td><%= attending_company.specialization %></td>
+         </tr>
+    <% end %>
+  </table>
+ </td>
+<!--  The table code can be found here: http://www.textfixer/resources/css-tables.php#css-table03 -->
 
-<% @attending_companies.each do |attending_company| %>
-  <tr>
-    <td><%= attending_company.name %></td>
-    <td><%= attending_company.day1 %></td>
-    <td><%= attending_company.day2 %></td>
-    <td><%= attending_company.specialization %></td>
-    <td><%= link_to 'Show', attending_company %></td>
-    <td><%= link_to 'Edit', edit_attending_company_path(attending_company) %></td>
-    <td><%= link_to 'Destroy', attending_company, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
 
+<!-- Table goes in the document BODY -->
 <br />
+ <td><%= button_to 'New Attending company', new_attending_company_path, class: "btn btn-large btn-primary" %></td>
 
-<%= link_to 'New Attending company', new_attending_company_path %>

@@ -1,4 +1,9 @@
 MyWebsite::Application.routes.draw do
+  root to: 'static_pages#home'
+
+  match '/companies',   to: 'attending_companies#index'
+  match '/students', to: 'students#index'
+
   resources :visiting_companies
 
   resources :attending_companies
