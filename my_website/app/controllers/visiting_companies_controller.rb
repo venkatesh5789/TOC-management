@@ -60,16 +60,13 @@ class VisitingCompaniesController < ApplicationController
   # PUT /visiting_companies/1.json
   def update
     @visiting_company = VisitingCompany.find(params[:id])
-
+    @visiting_company.visited = !@visiting_company.visited
+    @visiting_company.save
+    student_id = VisitingCompany.find(params[:id]).student_id
     respond_to do |format|
-      if @visiting_company.update_attributes(params[:visiting_company])
-        format.html { redirect_to @visiting_company, notice: 'Visiting company was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @visiting_company.errors, status: :unprocessable_entity }
-      end
+      format.html{redirect_to Student.find(student_id)}
     end
+
   end
 
   # DELETE /visiting_companies/1
