@@ -68,7 +68,7 @@
   <b>Companies eligible for:</b>
 <table>
 <td>
-  <table class="altrowstable" id="alternatecolor">
+  <table >
     <tr>
       <th>Name</th>
       <th>Day1</th>
@@ -88,12 +88,12 @@
 </td>
 
 <td>
-  <table class="altrowstable" id="alternatecolor" >
+  <table class="altrowstable"  >
     <tr>
       <th>Day 1 Companies not visited</th>
     </tr>
     <% VisitingCompany.all.each do |visiting_company| %>
-        <% if (visiting_company.student_id == @student.id) && (visiting_company.visited==false)&& AttendingCompany.find(visiting_company.attending_company_id).day1  %>
+        <% if (visiting_company.student_id == @student.id) && (visiting_company.visited==false)&& AttendingCompany.find(visiting_company.attending_company_id).day1 && (AttendingCompany.find(visiting_company.attending_company_id).specialization == @student.specialization ) %>
             <tr>
               <td><%= link_to AttendingCompany.find(visiting_company.attending_company_id).name, AttendingCompany.find(visiting_company.attending_company_id) %></td>
               <td><%= button_to("Remove", visiting_company_path(visiting_company.id) , {:method => :delete})%></td>
@@ -108,7 +108,7 @@
       <th>Day 1 Companies Visited</th>
     </tr>
     <% VisitingCompany.all.each do |visiting_company| %>
-        <% if (visiting_company.student_id == @student.id) && (visiting_company.visited) && AttendingCompany.find(visiting_company.attending_company_id).day1  %>
+        <% if (visiting_company.student_id == @student.id) && (visiting_company.visited) && AttendingCompany.find(visiting_company.attending_company_id).day1 && (AttendingCompany.find(visiting_company.attending_company_id).specialization == @student.specialization ) %>
             <tr>
               <td><%= link_to AttendingCompany.find(visiting_company.attending_company_id).name, AttendingCompany.find(visiting_company.attending_company_id) %></td>
               <td><%= button_to("Remove", visiting_company_path(visiting_company.id) , {:method => :delete})%></td>
@@ -124,7 +124,7 @@
         <th>Day 2 Companies not visited</th>
       </tr>
       <% VisitingCompany.all.each do |visiting_company| %>
-          <% if (visiting_company.student_id == @student.id) && (visiting_company.visited==false)&& AttendingCompany.find(visiting_company.attending_company_id).day2  %>
+          <% if (visiting_company.student_id == @student.id) && (visiting_company.visited==false)&& AttendingCompany.find(visiting_company.attending_company_id).day2 && (AttendingCompany.find(visiting_company.attending_company_id).specialization == @student.specialization )  %>
               <tr>
                 <td><%= link_to AttendingCompany.find(visiting_company.attending_company_id).name, AttendingCompany.find(visiting_company.attending_company_id) %></td>
                 <td><%= button_to("Remove", visiting_company_path(visiting_company.id) , {:method => :delete})%></td>
@@ -139,7 +139,7 @@
         <th>Day 2 Companies Visited</th>
       </tr>
       <% VisitingCompany.all.each do |visiting_company| %>
-          <% if (visiting_company.student_id == @student.id) && (visiting_company.visited) && AttendingCompany.find(visiting_company.attending_company_id).day2  %>
+          <% if (visiting_company.student_id == @student.id) && (visiting_company.visited) && AttendingCompany.find(visiting_company.attending_company_id).day2 && (AttendingCompany.find(visiting_company.attending_company_id).specialization == @student.specialization ) %>
               <tr>
                 <td><%= link_to AttendingCompany.find(visiting_company.attending_company_id).name, AttendingCompany.find(visiting_company.attending_company_id) %></td>
                 <td><%= button_to("Remove", visiting_company_path(visiting_company.id) , {:method => :delete})%></td>
