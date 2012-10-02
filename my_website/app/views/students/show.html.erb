@@ -10,7 +10,6 @@
   <%= @student.specialization %>
 </p>
 
-<!-- Javascript goes in the document HEAD -->
 <script type="text/javascript">
     function altRows(id){
         if(document.getElementsByTagName){
@@ -67,56 +66,56 @@
 <p>
   <b>Companies eligible for:</b>
 <table>
-<td>
-  <table >
-    <tr>
-      <th>Name</th>
-      <th>Day1</th>
-      <th>Day2</th>
-    </tr>
-  <% AttendingCompany.all.each do |attending_company| %>
-        <% if (attending_company.specialization == @student.specialization) && (VisitingCompany.where( :student_id => @student.id , :attending_company_id=>attending_company.id ).length==0) %>
-        <tr>
-            <td><%= link_to attending_company.name,  attending_company %></td>
-            <td><%= attending_company.day1 %></td>
-            <td><%= attending_company.day2 %></td>
-            <td><%= button_to("Add Visiting Company", {:method => 'new_visiting_company', :student_id => @student.id, :company_id => attending_company.id},class: "btn btn-small btn-primary")%></td>
-       </tr>
-       <% end %>
-    <% end %>
-  </table>
-</td>
+  <td>
+    <table >
+      <tr>
+        <th>Name</th>
+        <th>Day1</th>
+        <th>Day2</th>
+      </tr>
+      <% AttendingCompany.all.each do |attending_company| %>
+          <% if (attending_company.specialization == @student.specialization) && (VisitingCompany.where( :student_id => @student.id , :attending_company_id=>attending_company.id ).length==0) %>
+              <tr>
+                <td><%= link_to attending_company.name,  attending_company %></td>
+                <td><%= attending_company.day1 %></td>
+                <td><%= attending_company.day2 %></td>
+                <td><%= button_to("Add Visiting Company", {:method => 'new_visiting_company', :student_id => @student.id, :company_id => attending_company.id},class: "btn btn-small btn-primary")%></td>
+              </tr>
+          <% end %>
+      <% end %>
+    </table>
+  </td>
 
-<td>
-  <table class="altrowstable"  >
-    <tr>
-      <th>Day 1 Companies not visited</th>
-    </tr>
-    <% VisitingCompany.all.each do |visiting_company| %>
-        <% if (visiting_company.student_id == @student.id) && (visiting_company.visited==false)&& AttendingCompany.find(visiting_company.attending_company_id).day1 && (AttendingCompany.find(visiting_company.attending_company_id).specialization == @student.specialization ) %>
-            <tr>
-              <td><%= link_to AttendingCompany.find(visiting_company.attending_company_id).name, AttendingCompany.find(visiting_company.attending_company_id) %></td>
-              <td><%= button_to("Remove", visiting_company_path(visiting_company.id) , {:method => :delete})%></td>
-              <td><%= button_to("Add to visited", visiting_company_path(visiting_company.id) , {:method=> :put})%></td>
-            </tr>
-        <% end %>
-    <% end %>
-  </table>
+  <td>
+    <table class="altrowstable"  >
+      <tr>
+        <th>Day 1 Companies not visited</th>
+      </tr>
+      <% VisitingCompany.all.each do |visiting_company| %>
+          <% if (visiting_company.student_id == @student.id) && (visiting_company.visited==false)&& AttendingCompany.find(visiting_company.attending_company_id).day1 && (AttendingCompany.find(visiting_company.attending_company_id).specialization == @student.specialization ) %>
+              <tr>
+                <td><%= link_to AttendingCompany.find(visiting_company.attending_company_id).name, AttendingCompany.find(visiting_company.attending_company_id) %></td>
+                <td><%= button_to("Remove", visiting_company_path(visiting_company.id) , {:method => :delete})%></td>
+                <td><%= button_to("Add to visited", visiting_company_path(visiting_company.id) , {:method=> :put})%></td>
+              </tr>
+          <% end %>
+      <% end %>
+    </table>
 
-  <table class="altrowstable" id="alternatecolor">
-    <tr>
-      <th>Day 1 Companies Visited</th>
-    </tr>
-    <% VisitingCompany.all.each do |visiting_company| %>
-        <% if (visiting_company.student_id == @student.id) && (visiting_company.visited) && AttendingCompany.find(visiting_company.attending_company_id).day1 && (AttendingCompany.find(visiting_company.attending_company_id).specialization == @student.specialization ) %>
-            <tr>
-              <td><%= link_to AttendingCompany.find(visiting_company.attending_company_id).name, AttendingCompany.find(visiting_company.attending_company_id) %></td>
-              <td><%= button_to("Remove", visiting_company_path(visiting_company.id) , {:method => :delete})%></td>
-              <td><%= button_to("Remove from visited", visiting_company_path(visiting_company.id) , {:method=> :put})%></td>
-            </tr>
-        <% end %>
-    <% end %>
-  </table>
+    <table class="altrowstable" id="alternatecolor">
+      <tr>
+        <th>Day 1 Companies Visited</th>
+      </tr>
+      <% VisitingCompany.all.each do |visiting_company| %>
+          <% if (visiting_company.student_id == @student.id) && (visiting_company.visited) && AttendingCompany.find(visiting_company.attending_company_id).day1 && (AttendingCompany.find(visiting_company.attending_company_id).specialization == @student.specialization ) %>
+              <tr>
+                <td><%= link_to AttendingCompany.find(visiting_company.attending_company_id).name, AttendingCompany.find(visiting_company.attending_company_id) %></td>
+                <td><%= button_to("Remove", visiting_company_path(visiting_company.id) , {:method => :delete})%></td>
+                <td><%= button_to("Remove from visited", visiting_company_path(visiting_company.id) , {:method=> :put})%></td>
+              </tr>
+          <% end %>
+      <% end %>
+    </table>
   </td>
   <td>
     <table>
@@ -152,6 +151,7 @@
 </table>
 
 </p>
+
 
 <%= link_to 'Edit student information', edit_student_path(@student),class: "btn btn-large btn-primary" %>
 <%= link_to 'Back to students page', students_path, class: "btn btn-large btn-primary" %>

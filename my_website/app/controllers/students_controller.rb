@@ -41,7 +41,7 @@ class StudentsController < ApplicationController
   # POST /students.json
   def create
     @student = Student.new(params[:student])
-
+    @student.save
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
@@ -50,6 +50,13 @@ class StudentsController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @student.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def student_info
+    @student = Student.find(params[:id])
+    respond_to do | format |
+      format.js {render :layout => false}
     end
   end
 

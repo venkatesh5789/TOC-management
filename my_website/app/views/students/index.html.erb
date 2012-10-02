@@ -61,7 +61,7 @@
 
 <% @students.each do |student| %>
   <tr>
-    <td><%= link_to student.name, student %></td>
+    <td><%= link_to student.name, student_info_student_path(:id => student.id), :remote => true %></td>
     <td><%= student.specialization %></td>
      <td><%= button_to 'Edit', edit_student_path(student), method: :get, class: "btn btn-small btn-primary" %></td>
     <td><%= button_to 'Remove', student, class: "btn btn-small btn-primary",confirm: 'Are you sure?', method: :delete %></td>
@@ -69,6 +69,6 @@
 <% end %>
 </table>
 
-<br />
-
 <%= button_to 'New Student', new_student_path,class: "btn btn-large btn-primary" %>
+
+<div id="student_info"></div>
