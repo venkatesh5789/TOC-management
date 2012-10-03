@@ -61,12 +61,12 @@
 
 <% @students.each do |student| %>
   <tr>
-    <td><%= link_to student.name, student_info_student_path(:id => student.id), :remote => true %></td>
-    <td><%= link_to 'Edit company info', student %></td>
-
+    <td><%= student.name %></td>
     <td><%= student.specialization %></td>
      <td><%= button_to 'Edit', edit_student_path(student), method: :get, class: "btn btn-small btn-primary" %></td>
     <td><%= button_to 'Remove', student, class: "btn btn-small btn-primary",confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= button_to 'Check current TOC profile', student_info_student_path(:id => student.id), :method=> :get, :remote => true, class: "btn btn-small btn-primary" %></td>
+    <td><%= button_to 'Edit Current TOC Profile',  student, :method => :get, class: "btn btn-small btn-primary" %></td>
   </tr>
 <% end %>
 </table>

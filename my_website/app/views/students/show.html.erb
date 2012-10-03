@@ -67,7 +67,7 @@
   <b>Companies eligible for:</b>
 <table>
   <td>
-    <table >
+    <table class="altrowstable">
       <tr>
         <th>Name</th>
         <th>Day1</th>
@@ -87,7 +87,7 @@
   </td>
 
   <td>
-    <table class="altrowstable"  >
+    <table class="altrowstable" id="alternatecolor1" >
       <tr>
         <th>Day 1 Companies not visited</th>
       </tr>
@@ -102,7 +102,10 @@
       <% end %>
     </table>
 
-    <table class="altrowstable" id="alternatecolor">
+    <br>
+    <br>
+
+    <table class="altrowstable" id="alternatecolor2">
       <tr>
         <th>Day 1 Companies Visited</th>
       </tr>
@@ -118,7 +121,7 @@
     </table>
   </td>
   <td>
-    <table>
+    <table class="altrowstable" id="alternatecolor3">
       <tr>
         <th>Day 2 Companies not visited</th>
       </tr>
@@ -133,7 +136,10 @@
       <% end %>
     </table>
 
-    <table>
+    <br>
+    <br>
+
+    <table class="altrowstable" id="alternatecolor4">
       <tr>
         <th>Day 2 Companies Visited</th>
       </tr>
@@ -153,5 +159,5 @@
 </p>
 
 
-<%= link_to 'Edit student information', edit_student_path(@student),class: "btn btn-large btn-primary" %>
-<%= link_to 'Back to students page', students_path, class: "btn btn-large btn-primary" %>
+<%= button_to 'Edit student information', edit_student_path(@student), :method=> :get, class: "btn btn-large btn-primary" %>
+<%= button_to 'Back to students page', students_path, :method=> :get, class: "btn btn-large btn-primary" %>
