@@ -1,4 +1,5 @@
 <h1>Students</h1>
+<h2>Click on "Check current TOC profile" to see the user's selected companies without going to their profile page</h2>
 
 <!-- Javascript goes in the document HEAD -->
 <script type="text/javascript">
@@ -63,10 +64,10 @@
   <tr>
     <td><%= student.name %></td>
     <td><%= student.specialization %></td>
-     <td><%= button_to 'Edit', edit_student_path(student), method: :get, class: "btn btn-small btn-primary" %></td>
-    <td><%= button_to 'Remove', student, class: "btn btn-small btn-primary",confirm: 'Are you sure?', method: :delete %></td>
-    <td><%= button_to 'Check current TOC profile', student_info_student_path(:id => student.id), :method=> :get, :remote => true, class: "btn btn-small btn-primary" %></td>
-    <td><%= button_to 'Edit Current TOC Profile',  student, :method => :get, class: "btn btn-small btn-primary" %></td>
+     <td><%= button_to 'Edit student info', edit_student_path(student), method: :get, class: "btn btn-small btn-primary" %></td>
+     <td><%= button_to 'Check current TOC profile', student_info_student_path(:id => student.id), :method=> :get, :remote => true, class: "btn btn-small btn-primary" %></td>
+    <td><%= button_to 'Go to TOC Profile',  student, :method => :get, class: "btn btn-small btn-primary" %>
+    <td><%= link_to 'Remove Student', student,confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
