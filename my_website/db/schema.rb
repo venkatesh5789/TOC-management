@@ -22,23 +22,7 @@ ActiveRecord::Schema.define(:version => 20120917204240) do
     t.datetime "updated_at",     :null => false
   end
 
-  create_table "companies", :force => true do |t|
-    t.string   "name"
-    t.boolean  "day1"
-    t.boolean  "day2"
-    t.string   "specialization"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  create_table "students", :force => true do |t|
-    t.string   "name"
-    t.string   "specialization"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  create_table "users", :force => true do |t|
+   create_table "students", :force => true do |t|
     t.string   "name"
     t.string   "specialization"
     t.datetime "created_at",     :null => false

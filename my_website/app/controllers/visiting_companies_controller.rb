@@ -12,13 +12,18 @@ class VisitingCompaniesController < ApplicationController
     respond_with @visiting_company
   end
 
+  # GET /visiting_companies/new
+  # GET /visiting_companies/new.json
   def new
     u = VisitingCompany.new
     u.student_id = params[:student_id]
     u.attending_company_id = params[:company_id]
     u.visited = false;
     u.save
-    respond_with u
+     respond_to do |format|
+      format.html{redirect_to Student.find(u.student_id)} # new.html.erb
+     # format.json { render json: u }
+    end
   end
 
   # GET /visiting_companies/1/edit
@@ -50,15 +55,11 @@ class VisitingCompaniesController < ApplicationController
 
   end
 
-  # DELETE /visiting_companies/1
-  # DELETE /visiting_companies/1.json
   def destroy
     student_id = VisitingCompany.find(params[:id]).student_id
     @visiting_company = VisitingCompany.find(params[:id])
     @visiting_company.destroy
 
-    respond_to do |format|
-      format.html{redirect_to Student.find(student_id)}
-    end
+   respond_with @visiting_company
   end
 end

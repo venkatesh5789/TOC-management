@@ -43,21 +43,16 @@ class StudentsController < ApplicationController
 
   def update
     @student = Student.find(params[:id])
-
-    respond_to do |format|
-      if @student.update_attributes(params[:student])
-        respond_with @student
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
-      end
     end
-  end
+
 
   def destroy
     @student = Student.find(params[:id])
     @student.destroy
-    respond_with @student
+    redirect_to students_path
   end
+end
 
- end
+
+
+
