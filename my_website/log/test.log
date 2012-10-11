@@ -3038,3 +3038,286 @@ Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms)
   [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
   [1m[35m (0.0ms)[0m  begin transaction
   [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  Rendered students/_form.html.erb (10.0ms)
+  Rendered students/new.html.erb (78.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/attending_companies" for 127.0.0.1 at 2012-10-10 22:57:56 -0400
+Processing by AttendingCompaniesController#index as HTML
+  [1m[35mAttendingCompany Load (1.0ms)[0m  SELECT "attending_companies".* FROM "attending_companies" 
+Completed 200 OK in 15ms (Views: 11.0ms | ActiveRecord: 2.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  Rendered attending_companies/_form.html.erb (5.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (51.0ms)[0m  INSERT INTO "attending_companies" ("created_at", "day1", "day2", "name", "specialization", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00], ["day1", nil], ["day2", nil], ["name", nil], ["specialization", nil], ["updated_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AttendingCompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAttendingCompany Load (0.0ms)[0m  SELECT "attending_companies".* FROM "attending_companies" WHERE "attending_companies"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (5.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by AttendingCompaniesController#new as HTML
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "attending_companies" ("created_at", "day1", "day2", "name", "specialization", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00], ["day1", nil], ["day2", nil], ["name", nil], ["specialization", nil], ["updated_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (14.0ms)[0m  SELECT COUNT(*) FROM "attending_companies" 
+Processing by AttendingCompaniesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAttendingCompany Load (0.0ms)[0m  [1mSELECT "attending_companies".* FROM "attending_companies" WHERE "attending_companies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "attending_companies" WHERE "attending_companies"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/attending_companies
+Completed 302 Found in 124ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "attending_companies" [0m
+  [1m[35m (7.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "attending_companies" ("created_at", "day1", "day2", "name", "specialization", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00], ["day1", nil], ["day2", nil], ["name", nil], ["specialization", nil], ["updated_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by AttendingCompaniesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAttendingCompany Load (1.0ms)[0m  [1mSELECT "attending_companies".* FROM "attending_companies" WHERE "attending_companies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mDELETE FROM "attending_companies" WHERE "attending_companies"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/attending_companies
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+  [1m[36m (6.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "attending_companies" ("created_at", "day1", "day2", "name", "specialization", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00], ["day1", nil], ["day2", nil], ["name", nil], ["specialization", nil], ["updated_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AttendingCompaniesController#index as HTML
+  [1m[35mAttendingCompany Load (0.0ms)[0m  SELECT "attending_companies".* FROM "attending_companies" 
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (25.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "attending_companies" ("created_at", "day1", "day2", "name", "specialization", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00], ["day1", nil], ["day2", nil], ["name", nil], ["specialization", nil], ["updated_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by AttendingCompaniesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAttendingCompany Load (0.0ms)[0m  SELECT "attending_companies".* FROM "attending_companies" WHERE "attending_companies"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (4.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAttendingCompany Load (0.0ms)[0m  [1mSELECT "attending_companies".* FROM "attending_companies" [0m
+  [1m[35mVisitingCompany Load (0.0ms)[0m  SELECT "visiting_companies".* FROM "visiting_companies" 
+  [1m[36mVisitingCompany Load (0.0ms)[0m  [1mSELECT "visiting_companies".* FROM "visiting_companies" [0m
+  [1m[35mVisitingCompany Load (0.0ms)[0m  SELECT "visiting_companies".* FROM "visiting_companies" 
+  [1m[36mVisitingCompany Load (0.0ms)[0m  [1mSELECT "visiting_companies".* FROM "visiting_companies" [0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "visiting_companies" ("attending_company_id", "created_at", "student_id", "updated_at", "visited") VALUES (?, ?, ?, ?, ?)[0m  [["attending_company_id", nil], ["created_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00], ["student_id", nil], ["updated_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00], ["visited", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by VisitingCompaniesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVisitingCompany Load (0.0ms)[0m  [1mSELECT "visiting_companies".* FROM "visiting_companies" WHERE "visiting_companies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (23.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "visiting_companies" 
+Processing by VisitingCompaniesController#create as HTML
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "visiting_companies" ("attending_company_id", "created_at", "student_id", "updated_at", "visited") VALUES (?, ?, ?, ?, ?)  [["attending_company_id", nil], ["created_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00], ["student_id", nil], ["updated_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00], ["visited", nil]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/visiting_companies/1
+Completed 406 Not Acceptable in 11ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "visiting_companies" 
+  [1m[36m (13.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by VisitingCompaniesController#create as HTML
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "visiting_companies" ("attending_company_id", "created_at", "student_id", "updated_at", "visited") VALUES (?, ?, ?, ?, ?)  [["attending_company_id", nil], ["created_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00], ["student_id", nil], ["updated_at", Thu, 11 Oct 2012 02:57:56 UTC +00:00], ["visited", nil]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/visiting_companies/1
+Completed 406 Not Acceptable in 6ms (ActiveRecord: 0.0ms)
+  [1m[35m (5.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by VisitingCompaniesController#create as HTML
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by VisitingCompaniesController#create as HTML
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "visiting_companies" ("attending_company_id", "created_at", "student_id", "updated_at", "visited") VALUES (?, ?, ?, ?, ?)[0m  [["attending_company_id", nil], ["created_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00], ["student_id", nil], ["updated_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00], ["visited", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by VisitingCompaniesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVisitingCompany Load (0.0ms)[0m  [1mSELECT "visiting_companies".* FROM "visiting_companies" WHERE "visiting_companies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (5.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "visiting_companies" ("attending_company_id", "created_at", "student_id", "updated_at", "visited") VALUES (?, ?, ?, ?, ?)[0m  [["attending_company_id", nil], ["created_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00], ["student_id", nil], ["updated_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00], ["visited", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by VisitingCompaniesController#index as HTML
+  [1m[36mVisitingCompany Load (1.0ms)[0m  [1mSELECT "visiting_companies".* FROM "visiting_companies" [0m
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 1.0ms)
+  [1m[35m (4.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "visiting_companies" ("attending_company_id", "created_at", "student_id", "updated_at", "visited") VALUES (?, ?, ?, ?, ?)[0m  [["attending_company_id", nil], ["created_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00], ["student_id", nil], ["updated_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00], ["visited", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visiting_companies" [0m
+Processing by VisitingCompaniesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mVisitingCompany Load (0.0ms)[0m  SELECT "visiting_companies".* FROM "visiting_companies" WHERE "visiting_companies"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mVisitingCompany Load (0.0ms)[0m  [1mSELECT "visiting_companies".* FROM "visiting_companies" WHERE "visiting_companies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "visiting_companies" WHERE "visiting_companies"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/visiting_companies
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "visiting_companies" [0m
+  [1m[35m (37.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "visiting_companies" ("attending_company_id", "created_at", "student_id", "updated_at", "visited") VALUES (?, ?, ?, ?, ?)[0m  [["attending_company_id", nil], ["created_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00], ["student_id", nil], ["updated_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00], ["visited", nil]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by VisitingCompaniesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVisitingCompany Load (0.0ms)[0m  [1mSELECT "visiting_companies".* FROM "visiting_companies" WHERE "visiting_companies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mVisitingCompany Load (1.0ms)[0m  SELECT "visiting_companies".* FROM "visiting_companies" WHERE "visiting_companies"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "visiting_companies" WHERE "visiting_companies"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/visiting_companies
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (22.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by StudentsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "specialization", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00], ["name", nil], ["specialization", nil], ["updated_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.0ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (5.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "specialization", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00], ["name", nil], ["specialization", nil], ["updated_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.0ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (5.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "students" ("created_at", "name", "specialization", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00], ["name", nil], ["specialization", nil], ["updated_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00]]
+  [1m[35m (1.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (1.0ms)[0m  [1mSELECT "students".* FROM "students" [0m
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 1.0ms)
+  [1m[35m (38.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "students" 
+Processing by StudentsController#create as HTML
+  [1m[36m (1.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "students" ("created_at", "name", "specialization", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00], ["name", nil], ["specialization", nil], ["updated_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (1.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/students/1
+Completed 406 Not Acceptable in 11ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "students" 
+  [1m[36m (5.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+Processing by StudentsController#create as HTML
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "students" ("created_at", "name", "specialization", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00], ["name", nil], ["specialization", nil], ["updated_at", Thu, 11 Oct 2012 02:57:57 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/students/1
+Completed 406 Not Acceptable in 7ms (ActiveRecord: 0.0ms)
+  [1m[35m (6.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by StudentsController#create as HTML
+  Parameters: {"student"=>{}}
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by StudentsController#create as HTML
+  Parameters: {"student"=>{}}
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  Rendered attending_companies/_form.html.erb (5.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+
+
+Started GET "/visiting_companies" for 127.0.0.1 at 2012-10-10 22:57:57 -0400
+Processing by VisitingCompaniesController#index as HTML
+  [1m[35mVisitingCompany Load (0.0ms)[0m  SELECT "visiting_companies".* FROM "visiting_companies" 
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  Rendered students/_form.html.erb (2.0ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
