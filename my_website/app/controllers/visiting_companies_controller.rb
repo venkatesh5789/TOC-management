@@ -1,24 +1,15 @@
 class VisitingCompaniesController < ApplicationController
-  # GET /visiting_companies
-  # GET /visiting_companies.json
+
+  respond_to :html, :json, :xml
+
   def index
     @visiting_companies = VisitingCompany.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @visiting_companies }
-    end
+    respond_with @visiting_companies
   end
 
-  # GET /visiting_companies/1
-  # GET /visiting_companies/1.json
   def show
     @visiting_company = VisitingCompany.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @visiting_company }
-    end
+    respond_with @visiting_company
   end
 
   # GET /visiting_companies/new
@@ -40,15 +31,12 @@ class VisitingCompaniesController < ApplicationController
     @visiting_company = VisitingCompany.find(params[:id])
   end
 
-  # POST /visiting_companies
-  # POST /visiting_companies.json
   def create
     @visiting_company = VisitingCompany.new(params[:visiting_company])
 
     respond_to do |format|
       if @visiting_company.save
-        format.html { redirect_to @visiting_company, notice: 'Visiting company was successfully created.' }
-        format.json { render json: @visiting_company, status: :created, location: @visiting_company }
+        respond_with @visiting_company
       else
         format.html { render action: "new" }
         format.json { render json: @visiting_company.errors, status: :unprocessable_entity }
@@ -56,8 +44,6 @@ class VisitingCompaniesController < ApplicationController
     end
   end
 
-  # PUT /visiting_companies/1
-  # PUT /visiting_companies/1.json
   def update
     @visiting_company = VisitingCompany.find(params[:id])
     @visiting_company.visited = !@visiting_company.visited
@@ -69,15 +55,11 @@ class VisitingCompaniesController < ApplicationController
 
   end
 
-  # DELETE /visiting_companies/1
-  # DELETE /visiting_companies/1.json
   def destroy
     student_id = VisitingCompany.find(params[:id]).student_id
     @visiting_company = VisitingCompany.find(params[:id])
     @visiting_company.destroy
 
-    respond_to do |format|
-      format.html{redirect_to Student.find(student_id)}
-    end
+   respond_with @visiting_company
   end
 end

@@ -1,6 +1,12 @@
 MyWebsite::Application.routes.draw do
   root to: 'static_pages#home'
 
+  resources :students do
+    member do
+      get 'student_info'
+    end
+  end
+
   match '/companies',   to: 'attending_companies#index'
   match '/students', to: 'students#index'
 
